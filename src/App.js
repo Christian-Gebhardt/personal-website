@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import About from "./sections/About";
+import Vita from "./sections/Vita";
+import Skills from "./sections/Skills";
+import Projects from "./sections/Projects";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import { ThemeProvider } from "@emotion/react";
+import { Divider, Box } from "@mui/material";
+
+let theme = createTheme({
+  palette: {
+    primary: {
+      main: "#c5cae9",
+    },
+    secondary: {
+      main: "#edead3",
+    },
+    accent: {
+      main: "#383d6b",
+    },
+  },
+});
+
+theme = responsiveFontSizes(theme);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateRows: "auto",
+        }}
+      >
+        <Navbar />
+        <About />
+        <Divider variant="middle" />
+        <Vita />
+        <Divider variant="middle" />
+        <Skills />
+        <Divider variant="middle" />
+        <Projects />
+      </Box>
+    </ThemeProvider>
   );
 }
 
