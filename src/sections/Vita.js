@@ -15,6 +15,7 @@ import Constants from "../Constants";
 function Vita() {
   return (
     <Paper
+      id="vita"
       sx={{
         p: 2,
         m: 8,

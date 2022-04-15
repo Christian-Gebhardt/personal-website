@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { AppBar, Box, Toolbar, IconButton, Typography } from "@mui/material";
-import { Menu, GitHub, LinkedIn, Email } from "@mui/icons-material";
+import { GitHub, LinkedIn, Email } from "@mui/icons-material";
 import LightTooltip from "./LightTooltip";
 import logo from "../assets/images/logo.png";
 import CustomSnackbar from "./CustomSnackbar";
 import Constants from "../Constants";
+import NavigationMenuButton from "./NavigationMenuButton";
 
 const copyText = require("clipboard-copy");
 
@@ -31,10 +32,10 @@ function Navbar() {
           <Box
             component="img"
             sx={{
-              height: 90,
-              width: 410,
-              maxHeight: { xs: 50, md: 75 },
-              maxWidth: { xs: 230, md: 360 },
+              height: 75,
+              width: 375,
+              maxHeight: { xs: 50, md: 65 },
+              maxWidth: { xs: 250, md: 325 },
               m: 0.5,
             }}
             alt="logo"
@@ -43,7 +44,7 @@ function Navbar() {
           <Box
             sx={{
               position: "absolute",
-              right: "120px",
+              right: "8%",
               mx: 2,
             }}
           >
@@ -64,7 +65,7 @@ function Navbar() {
                 sx={{
                   mx: 1.5,
                   "& svg": {
-                    fontSize: 32,
+                    fontSize: 28,
                   },
                 }}
               >
@@ -94,7 +95,7 @@ function Navbar() {
                 sx={{
                   mx: 1.5,
                   "& svg": {
-                    fontSize: 32,
+                    fontSize: 28,
                   },
                 }}
               >
@@ -118,7 +119,7 @@ function Navbar() {
                 sx={{
                   mx: 1.5,
                   "& svg": {
-                    fontSize: 32,
+                    fontSize: 28,
                   },
                 }}
               >
@@ -126,22 +127,18 @@ function Navbar() {
               </IconButton>
             </a>
           </Box>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
+          <Box
             sx={{
               mx: 2.5,
               "& svg": {
-                fontSize: 52,
+                fontSize: 48,
               },
               position: "absolute",
               right: "0.5%",
             }}
           >
-            <Menu />
-          </IconButton>
+            <NavigationMenuButton />
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>

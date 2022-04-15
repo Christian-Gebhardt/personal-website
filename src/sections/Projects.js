@@ -43,6 +43,7 @@ function Projects() {
   ];
   return (
     <Paper
+      id="projects"
       sx={{
         p: 2,
         m: 8,
@@ -64,16 +65,23 @@ function Projects() {
       <Box
         sx={{
           m: 4,
+          "&>*:nth-child(2n)": {
+            "& .project-item": {
+              flexDirection: "row-reverse",
+            },
+          },
         }}
       >
         {data.map((element, i) => (
           <Box
+            className="project-box"
             sx={{
               my: 12,
             }}
             key={i}
           >
             <Grid
+              className="project-item"
               container
               sx={{
                 alignItems: "center",

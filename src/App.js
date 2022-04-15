@@ -7,6 +7,7 @@ import Projects from "./sections/Projects";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
 import { Divider, Box } from "@mui/material";
+import Footer from "./components/Footer";
 
 let theme = createTheme({
   palette: {
@@ -41,6 +42,7 @@ function App() {
         <Skills />
         <Divider variant="middle" />
         <Projects />
+        <Footer />
       </Box>
     </ThemeProvider>
   );

@@ -6,8 +6,6 @@ import {
   Card,
   CardMedia,
   CardContent,
-  CardActions,
-  Button,
   Divider,
 } from "@mui/material";
 import javaIcon from "../assets/images/java-icon.png";
@@ -42,12 +40,13 @@ function Skills() {
     },
     {
       image: otherSkillsIcon,
-      header: "Anderes",
+      header: "Weitere",
       text: Constants.LOREM_IPSUM,
     },
   ];
   return (
     <Paper
+      id="skills"
       sx={{
         p: 2,
         m: 8,
@@ -124,14 +123,16 @@ function Skills() {
                   >
                     {element.header}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "text.secondary",
+                      fontSize: "1.1rem",
+                    }}
+                  >
                     {element.text}
                   </Typography>
                 </CardContent>
-                <CardActions>
-                  <Button size="small">Share</Button>
-                  <Button size="small">Learn More</Button>
-                </CardActions>
               </Card>
             </Grid>
           ))}

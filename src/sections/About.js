@@ -6,6 +6,7 @@ import profilePicture from "../assets/images/profile.png";
 function About() {
   return (
     <Paper
+      id="about"
       sx={{
         p: 2,
         m: 8,
@@ -13,13 +14,12 @@ function About() {
       elevation={6}
     >
       <Typography
-        id="about"
         variant="h1"
         gutterBottom
         component="div"
         sx={{
           textAlign: "center",
-          m: 1.5,
+          m: 3,
         }}
       >
         About
@@ -28,7 +28,6 @@ function About() {
         sx={{
           display: "flex",
           justifyContent: "space-evenly",
-          alignItems: "center",
           alignContent: "stretch",
         }}
       >
@@ -46,13 +45,13 @@ function About() {
         />
         <Box
           sx={{
-            m: 2,
+            mx: 2,
             maxWidth: 800,
           }}
         >
           <Typography
             sx={{
-              fontSize: 20,
+              fontSize: "1.28rem",
             }}
           >
             {Constants.LOREM_IPSUM + Constants.LOREM_IPSUM}
