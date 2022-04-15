@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AppBar, Box, Toolbar, IconButton, Typography } from "@mui/material";
 import { GitHub, LinkedIn, Email } from "@mui/icons-material";
 import LightTooltip from "./LightTooltip";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo-white.png";
 import CustomSnackbar from "./CustomSnackbar";
 import Constants from "../Constants";
 import NavigationMenuButton from "./NavigationMenuButton";
@@ -19,7 +19,7 @@ function Navbar() {
 
   return (
     <Box>
-      <AppBar position="static">
+      <AppBar position="static" color="primary">
         <Toolbar
           sx={{
             height: 100,
@@ -32,10 +32,10 @@ function Navbar() {
           <Box
             component="img"
             sx={{
-              height: 75,
-              width: 375,
-              maxHeight: { xs: 50, md: 65 },
-              maxWidth: { xs: 250, md: 325 },
+              height: 70,
+              width: 360,
+              maxHeight: { xs: 50, md: 60 },
+              maxWidth: { xs: 250, md: 320 },
               m: 0.5,
             }}
             alt="logo"

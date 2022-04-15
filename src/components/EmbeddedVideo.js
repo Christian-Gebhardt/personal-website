@@ -5,19 +5,20 @@ const EmbeddedVideo = ({ embedId }) => (
   <div
     className="video-responsive"
     style={{
+      display: "flex",
+      justifyContent: "center",
       overflow: "hidden",
       paddingBottom: "56.25%",
+      marginBottom: -14,
       position: "relative",
       height: 0,
     }}
   >
     <iframe
-      width="853"
-      height="480"
       style={{
         margin: "auto",
-        height: "90%",
-        width: "90%",
+        height: "95%",
+        width: "95%",
         position: "absolute",
       }}
       src={`https://www.youtube.com/embed/${embedId}`}

@@ -36,7 +36,7 @@ function Projects() {
     {
       title: "Naiver Trading Bot",
       description: Constants.LOREM_IPSUM,
-      technologies: ["Python", "Binance API", "Slack Messaging"],
+      technologies: ["Python", "Binance API", "Slack Bot"],
       link: "https://github.com/stars/Christian-Gebhardt/lists/klassifikatoren-evaluation",
       media: "eqmKMensZ5U",
     },
@@ -135,47 +135,47 @@ function Projects() {
                   }}
                 >
                   <EmbeddedVideo embedId={element.media} />
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography
-                    variant="h5"
+                  <Box
                     sx={{
-                      textAlign: "center",
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "center",
+                      alignItems: "center",
                     }}
                   >
-                    Link zu Git Repository:{" "}
-                  </Typography>
-                  <a
-                    target="_blank"
-                    href={element.link}
-                    rel="noopener noreferrer"
-                    style={{
-                      textDecoration: "none",
-                      color: "inherit",
-                    }}
-                  >
-                    <IconButton
-                      size="large"
-                      edge="start"
-                      color="inherit"
-                      aria-label="github"
+                    <Typography
+                      variant="h5"
                       sx={{
-                        mx: 1.5,
-                        "& svg": {
-                          fontSize: 32,
-                        },
+                        textAlign: "center",
                       }}
                     >
-                      <GitHub />
-                    </IconButton>
-                  </a>
+                      Link zu Git Repository:
+                    </Typography>
+                    <a
+                      target="_blank"
+                      href={element.link}
+                      rel="noopener noreferrer"
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                      }}
+                    >
+                      <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="github"
+                        sx={{
+                          mx: 1.5,
+                          "& svg": {
+                            fontSize: 32,
+                          },
+                        }}
+                      >
+                        <GitHub />
+                      </IconButton>
+                    </a>
+                  </Box>
                 </Box>
               </Grid>
             </Grid>

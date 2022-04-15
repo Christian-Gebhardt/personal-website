@@ -6,19 +6,46 @@ import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
+import { CssBaseline } from "@mui/material";
 import { Divider, Box } from "@mui/material";
 import Footer from "./components/Footer";
 
 let theme = createTheme({
   palette: {
+    background: {
+      default: "#EDE8E8",
+    },
     primary: {
-      main: "#c5cae9",
+      main: "#1B264B",
     },
     secondary: {
-      main: "#edead3",
+      main: "#8896AB",
     },
     accent: {
-      main: "#383d6b",
+      main: "FFF2F1",
+    },
+  },
+  typography: {
+    h1: {
+      color: "#1B264B",
+    },
+    h2: {
+      color: "#1B264B",
+    },
+    h3: {
+      color: "#1B264B",
+    },
+    h4: {
+      color: "#1B264B",
+    },
+  },
+  components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#fcfcfc",
+        },
+      },
     },
   },
 });
@@ -28,13 +55,14 @@ theme = responsiveFontSizes(theme);
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Navbar />
       <Box
         sx={{
-          display: "grid",
-          gridTemplateRows: "auto",
+          display: "flex",
+          flexDirection: "column",
         }}
       >
-        <Navbar />
         <About />
         <Divider variant="middle" />
         <Vita />

@@ -33,6 +33,12 @@ function NavigationMenuButton() {
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}
+        sx={{
+          "& li": {
+            fontSize: "1.32rem",
+            padding: 1.5,
+          },
+        }}
       >
         <Link to="about" spy={true} smooth={true}>
           <MenuItem onClick={handleClose}>About</MenuItem>

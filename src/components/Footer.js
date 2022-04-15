@@ -19,7 +19,7 @@ function Footer() {
     <BottomNavigation
       sx={{
         height: 100,
-        backgroundColor: "#eeeeee",
+        backgroundColor: "#EDE8E8",
         justifyContent: "space-evenly",
         alignItems: "center",
         "& p": {
