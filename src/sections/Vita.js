@@ -11,16 +11,18 @@ import {
   TimelineOppositeContent,
 } from "@mui/lab";
 import Constants from "../Constants";
+import { theme } from "../Theme";
 
 function Vita() {
   return (
     <Paper
       id="vita"
-      sx={{
-        p: 2,
-        m: 8,
-      }}
       elevation={6}
+      sx={{
+        mx: 4,
+        my: 6,
+        p: 2,
+      }}
     >
       <Typography
         variant="h1"
@@ -35,36 +37,34 @@ function Vita() {
       </Typography>
       <Box
         sx={{
-          m: 4,
+          m: 1.5,
+          display: "flex",
+          justifyContent: "flex-start",
         }}
       >
         <Timeline
-          position="alternate"
+          position="right"
           sx={{
+            alignContent: "flex-start",
             "& p": {
-              fontSize: "1.25rem",
+              fontSize: { xs: "0.8rem", md: "1rem", lg: "1.25rem" },
+            },
+            "& h3": {
+              fontSize: { xs: "0.8rem", md: "1rem", lg: "1.25rem" },
             },
             "& h5": {
+              fontSize: { xs: "0.8rem", md: "1rem", lg: "1.25rem" },
               color: "text.secondary",
             },
+            "& .MuiTimelineOppositeContent-root": {
+              flex: 0.1,
+            },
             "& .timeline-item .timeline-seperator .timeline-connector": {
-              width: "3px",
-              height: "50px",
-            },
-            "& .timeline-item .timeline-content-right": {
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-start",
-              textAlign: "center",
-            },
-            "& .timeline-item .timeline-content-left": {
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              textAlign: "center!important",
+              width: 3,
+              height: { xs: 25, sm: 40, lg: 50 },
             },
             "& svg": {
-              fontSize: 38,
+              fontSize: { xs: "2.25rem", lg: "2.75rem" },
             },
           }}
         >
@@ -79,13 +79,13 @@ function Vita() {
             </TimelineOppositeContent>
             <TimelineSeparator className="timeline-seperator">
               <TimelineConnector className="timeline-connector" />
-              <TimelineDot>
+              <TimelineDot color="primary">
                 <School />
               </TimelineDot>
               <TimelineConnector className="timeline-connector" />
             </TimelineSeparator>
             <TimelineContent className="timeline-content-right">
-              <Box>
+              <Box sx={{ ml: 4, mr: 2 }}>
                 <Typography variant="h3" component="span">
                   Universität Bayreuth
                 </Typography>
@@ -94,7 +94,6 @@ function Vita() {
                   sx={{
                     textAlign: "left",
                     my: 1,
-                    mx: 2,
                   }}
                 >
                   {Constants.LOREM_IPSUM_SMALL}
@@ -112,13 +111,13 @@ function Vita() {
             </TimelineOppositeContent>
             <TimelineSeparator className="timeline-seperator">
               <TimelineConnector className="timeline-connector" />
-              <TimelineDot color="primary">
+              <TimelineDot color="secondary">
                 <Laptop />
               </TimelineDot>
               <TimelineConnector className="timeline-connector" />
             </TimelineSeparator>
             <TimelineContent className="timeline-content-left">
-              <Box>
+              <Box sx={{ ml: 4, mr: 2 }}>
                 <Typography variant="h3" component="span">
                   Werkstudent
                 </Typography>
@@ -127,7 +126,6 @@ function Vita() {
                   sx={{
                     textAlign: "left",
                     my: 1,
-                    mx: 2,
                   }}
                 >
                   {Constants.LOREM_IPSUM_SMALL}
@@ -145,14 +143,14 @@ function Vita() {
             </TimelineOppositeContent>
             <TimelineSeparator className="timeline-seperator">
               <TimelineConnector className="timeline-connector" />
-              <TimelineDot color="primary" variant="outlined">
+              <TimelineDot color="primary">
                 <School />
               </TimelineDot>
               <TimelineConnector className="timeline-connector" />
             </TimelineSeparator>
 
             <TimelineContent className="timeline-content-right">
-              <Box>
+              <Box sx={{ ml: 4, mr: 2 }}>
                 <Typography variant="h3" component="span">
                   Universität Bayreuth
                 </Typography>
@@ -161,7 +159,6 @@ function Vita() {
                   sx={{
                     textAlign: "left",
                     my: 1,
-                    mx: 2,
                   }}
                 >
                   {Constants.LOREM_IPSUM_SMALL}
@@ -185,7 +182,7 @@ function Vita() {
               <TimelineConnector className="timeline-connector" />
             </TimelineSeparator>
             <TimelineContent className="timeline-content-left">
-              <Box>
+              <Box sx={{ ml: 4, mr: 2 }}>
                 <Typography variant="h3" component="span">
                   Gymnasium Münchberg
                 </Typography>
@@ -194,7 +191,6 @@ function Vita() {
                   sx={{
                     textAlign: "left",
                     my: 1,
-                    mx: 2,
                   }}
                 >
                   {Constants.LOREM_IPSUM_SMALL}

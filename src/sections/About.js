@@ -5,14 +5,7 @@ import profilePicture from "../assets/images/profile.png";
 
 function About() {
   return (
-    <Paper
-      id="about"
-      sx={{
-        p: 2,
-        m: 8,
-      }}
-      elevation={6}
-    >
+    <Paper id="about" elevation={6} sx={{ mx: 4, my: 6, p: 2 }}>
       <Typography
         variant="h1"
         gutterBottom
@@ -20,6 +13,7 @@ function About() {
         sx={{
           textAlign: "center",
           m: 3,
+          mb: 5,
         }}
       >
         About
@@ -27,35 +21,46 @@ function About() {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-evenly",
-          alignContent: "stretch",
+          justifyContent: "center",
+          mx: 5,
+          mb: 6,
         }}
       >
-        <Avatar
-          alt="Profilbild"
-          src={profilePicture}
-          sx={{
-            width: 700,
-            height: 700,
-            maxHeight: { xs: 450, md: 575 },
-            maxWidth: { xs: 450, md: 575 },
-            mx: 4,
-            mb: 6,
-          }}
-        />
         <Box
           sx={{
-            mx: 2,
-            maxWidth: 800,
+            width: "100%",
+            height: "auto",
           }}
         >
-          <Typography
+          <Avatar
+            alt="Profilbild"
+            src={profilePicture}
             sx={{
-              fontSize: "1.28rem",
+              width: 700,
+              height: 700,
+              maxHeight: { xs: 175, sm: 250, md: 350, lg: 500, xl: 625 },
+              maxWidth: { xs: 175, sm: 250, md: 350, lg: 500, xl: 625 },
+              mt: 1.5,
+              ml: 2,
+              mr: 8,
+              mb: 2,
+              float: "left",
+            }}
+          />
+          <Box
+            sx={{
+              p: "0 2 2",
+              mx: 4,
             }}
           >
-            {Constants.LOREM_IPSUM + Constants.LOREM_IPSUM}
-          </Typography>
+            <Typography
+              sx={{
+                textAlign: "justify",
+              }}
+            >
+              {Constants.LOREM_IPSUM + Constants.LOREM_IPSUM}
+            </Typography>
+          </Box>
         </Box>
       </Box>
     </Paper>

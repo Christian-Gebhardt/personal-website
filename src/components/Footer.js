@@ -18,12 +18,12 @@ function Footer() {
   return (
     <BottomNavigation
       sx={{
-        height: 100,
+        height: { xs: 60, sm: 70, lg: 90, xl: 100 },
         backgroundColor: "#EDE8E8",
         justifyContent: "space-evenly",
         alignItems: "center",
         "& p": {
-          fontSize: "1.2rem",
+          fontSize: { xs: "0.6rem", sm: "0.8rem", lg: "1rem" },
           color: "text.secondary",
           mx: 4,
         },
@@ -37,7 +37,10 @@ function Footer() {
       </Box>
       <Box
         sx={{
-          mx: 4,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          mx: 2,
         }}
       >
         <LightTooltip
@@ -54,9 +57,9 @@ function Footer() {
             aria-label="email"
             onClick={handleCopyClick}
             sx={{
-              mx: 1.5,
+              mx: 1,
               "& svg": {
-                fontSize: 24,
+                fontSize: { xs: "1rem", lg: "2rem" },
               },
             }}
           >
@@ -84,9 +87,9 @@ function Footer() {
             color="inherit"
             aria-label="github"
             sx={{
-              mx: 1.5,
+              mx: 1,
               "& svg": {
-                fontSize: 24,
+                fontSize: { xs: "1rem", lg: "2rem" },
               },
             }}
           >
@@ -108,9 +111,9 @@ function Footer() {
             color="inherit"
             aria-label="linkedin"
             sx={{
-              mx: 1.5,
+              mx: 1,
               "& svg": {
-                fontSize: 24,
+                fontSize: { xs: "1rem", lg: "2rem" },
               },
             }}
           >

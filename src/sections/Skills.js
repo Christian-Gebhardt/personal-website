@@ -24,6 +24,11 @@ function Skills() {
       text: Constants.LOREM_IPSUM,
     },
     {
+      image: pythonIcon,
+      header: "Data Science",
+      text: Constants.LOREM_IPSUM,
+    },
+    {
       image: webdevIcon,
       header: "Web Entwicklung",
       text: Constants.LOREM_IPSUM,
@@ -31,11 +36,6 @@ function Skills() {
     {
       image: databaseIcon,
       header: "Datenbanken",
-      text: Constants.LOREM_IPSUM,
-    },
-    {
-      image: pythonIcon,
-      header: "Data Science",
       text: Constants.LOREM_IPSUM,
     },
     {
@@ -47,11 +47,12 @@ function Skills() {
   return (
     <Paper
       id="skills"
-      sx={{
-        p: 2,
-        m: 8,
-      }}
       elevation={6}
+      sx={{
+        mx: 4,
+        my: 6,
+        p: 2,
+      }}
     >
       <Box>
         <Typography
@@ -68,7 +69,7 @@ function Skills() {
         <Grid
           container
           rowSpacing={8}
-          columnSpacing={8}
+          columnSpacing={6}
           sx={{
             justifyContent: "center",
             alignItems: "center",
@@ -77,10 +78,12 @@ function Skills() {
           {data.map((element, i) => (
             <Grid
               item
-              xs={6}
-              md={4}
+              xs={12}
+              md={6}
+              lg={4}
               key={i}
               sx={{
+                display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
               }}
@@ -89,16 +92,17 @@ function Skills() {
                 elevation={4}
                 sx={{
                   borderRadius: "45px",
+                  maxWidth: { md: 400, lg: 520 },
+                  m: 2,
                 }}
               >
                 <CardMedia
                   component="img"
                   alt="skills"
                   sx={{
-                    width: "150px",
-                    height: "150px",
-                    maxWidth: "100%",
-                    maxHeight: "100%",
+                    width: 126,
+                    maxWidth: { xs: 64, md: 84, lg: 126 },
+                    height: "auto",
                     objectFit: "contain",
                     display: "block",
                     marginLeft: "auto",
@@ -124,10 +128,8 @@ function Skills() {
                     {element.header}
                   </Typography>
                   <Typography
-                    variant="body2"
                     sx={{
-                      color: "text.secondary",
-                      fontSize: "1.1rem",
+                      fontSize: { xs: "0.8rem", md: "1rem", lg: "1rem" },
                     }}
                   >
                     {element.text}

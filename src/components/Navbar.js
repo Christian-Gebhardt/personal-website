@@ -22,11 +22,14 @@ function Navbar() {
       <AppBar position="static" color="primary">
         <Toolbar
           sx={{
+            width: "100%",
             height: 100,
             maxHeight: {
-              xs: 60,
-              md: 85,
+              xs: 50,
+              md: 75,
             },
+            display: "flex",
+            justifyContent: "space-between",
           }}
         >
           <Box
@@ -34,8 +37,8 @@ function Navbar() {
             sx={{
               height: 70,
               width: 360,
-              maxHeight: { xs: 50, md: 60 },
-              maxWidth: { xs: 250, md: 320 },
+              maxHeight: { xs: 30, sm: 40, md: 50, lg: 60 },
+              maxWidth: { xs: 150, sm: 200, md: 250, lg: 300 },
               m: 0.5,
             }}
             alt="logo"
@@ -43,8 +46,9 @@ function Navbar() {
           />
           <Box
             sx={{
-              position: "absolute",
-              right: "8%",
+              display: "flex",
+              justifyContent: "space-evenly",
+              alignItems: "center",
               mx: 2,
             }}
           >
@@ -65,7 +69,7 @@ function Navbar() {
                 sx={{
                   mx: 1.5,
                   "& svg": {
-                    fontSize: 28,
+                    fontSize: { xs: "1.2rem", lg: "2.35rem" },
                   },
                 }}
               >
@@ -95,7 +99,7 @@ function Navbar() {
                 sx={{
                   mx: 1.5,
                   "& svg": {
-                    fontSize: 28,
+                    fontSize: { xs: "1.2rem", lg: "2.35rem" },
                   },
                 }}
               >
@@ -119,25 +123,24 @@ function Navbar() {
                 sx={{
                   mx: 1.5,
                   "& svg": {
-                    fontSize: 28,
+                    fontSize: { xs: "1.2rem", lg: "2.35rem" },
                   },
                 }}
               >
                 <LinkedIn />
               </IconButton>
             </a>
-          </Box>
-          <Box
-            sx={{
-              mx: 2.5,
-              "& svg": {
-                fontSize: 48,
-              },
-              position: "absolute",
-              right: "0.5%",
-            }}
-          >
-            <NavigationMenuButton />
+            <Box
+              sx={{
+                mr: 1.5,
+                ml: 6,
+                "& svg": {
+                  fontSize: { xs: "2.25rem", lg: "3.5rem" },
+                },
+              }}
+            >
+              <NavigationMenuButton />
+            </Box>
           </Box>
         </Toolbar>
       </AppBar>

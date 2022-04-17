@@ -16,21 +16,46 @@ function Projects() {
     {
       title: "ERP-System",
       description: Constants.LOREM_IPSUM,
-      technologies: ["Java Spring", "React", "MySQL"],
+      technologies: [
+        "Java",
+        "Spring",
+        "JavaScript",
+        "HTML & CSS",
+        "React",
+        "Bootstrap",
+        "MySQL",
+      ],
       link: "https://github.com/stars/Christian-Gebhardt/lists/klassifikatoren-evaluation",
       media: "eqmKMensZ5U",
     },
     {
       title: "Evaluationsframework Machine Learning",
       description: Constants.LOREM_IPSUM,
-      technologies: ["Flask", "React", "Scikit-Learn", "Scipy"],
+      technologies: [
+        "Python",
+        "Flask",
+        "JavaScript",
+        "HTML & CSS",
+        "React",
+        "MaterialUI",
+        "Scikit-Learn",
+        "Scipy",
+      ],
       link: "https://github.com/stars/Christian-Gebhardt/lists/klassifikatoren-evaluation",
       media: "eqmKMensZ5U",
     },
     {
       title: "System für Literaturverwaltung",
       description: Constants.LOREM_IPSUM,
-      technologies: ["Java Spring", "React", "MySQL"],
+      technologies: [
+        "Java",
+        "Spring",
+        "JavaScript",
+        "HTML & CSS",
+        "React",
+        "Bootstrap",
+        "MySQL",
+      ],
       media: "eqmKMensZ5U",
     },
     {
@@ -44,11 +69,12 @@ function Projects() {
   return (
     <Paper
       id="projects"
-      sx={{
-        p: 2,
-        m: 8,
-      }}
       elevation={6}
+      sx={{
+        mx: 4,
+        my: 6,
+        p: 2,
+      }}
     >
       <Box>
         <Typography
@@ -57,6 +83,7 @@ function Projects() {
           sx={{
             textAlign: "center",
             m: 2,
+            mb: 6,
           }}
         >
           Projekte
@@ -64,31 +91,29 @@ function Projects() {
       </Box>
       <Box
         sx={{
-          m: 4,
-          "&>*:nth-child(2n)": {
-            "& .project-item": {
-              flexDirection: "row-reverse",
+          display: "flex",
+          flexDirection: "column",
+          gap: 10,
+          m: 2,
+          "&>*:nth-of-type(2n)": {
+            "& .project": {
+              flexDirection: { lg: "row-reverse" },
             },
           },
         }}
       >
         {data.map((element, i) => (
-          <Box
-            className="project-box"
-            sx={{
-              my: 12,
-            }}
-            key={i}
-          >
+          <Box className="project-box" key={i}>
             <Grid
-              className="project-item"
+              className="project"
               container
               sx={{
+                justifyContent: "center",
                 alignItems: "center",
                 verticalAlign: "bottom",
               }}
             >
-              <Grid item xs={6}>
+              <Grid item md={12} lg={6}>
                 {" "}
                 <Box
                   sx={{
@@ -110,16 +135,16 @@ function Projects() {
                   <Typography
                     sx={{
                       m: 4,
-                      fontSize: "1.2rem",
                     }}
                   >
                     {element.description}
                   </Typography>
                   <Typography
                     sx={{
-                      my: 2,
+                      mt: 2,
+                      mb: 4,
                       mx: 4,
-                      fontSize: "1.25rem",
+                      fontSize: { sx: "1rem", lg: "1.25rem" },
                       fontWeight: "medium",
                     }}
                   >
@@ -128,9 +153,10 @@ function Projects() {
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item lg={6} md={8} justifyContent="center">
                 <Box
                   sx={{
+                    my: 2,
                     mx: 4,
                   }}
                 >
@@ -146,6 +172,7 @@ function Projects() {
                     <Typography
                       variant="h5"
                       sx={{
+                        fontSize: { sx: "1.1rem", lg: "1.35rem" },
                         textAlign: "center",
                       }}
                     >
@@ -168,7 +195,7 @@ function Projects() {
                         sx={{
                           mx: 1.5,
                           "& svg": {
-                            fontSize: 32,
+                            fontSize: { sx: "1.5rem", lg: "2.25rem" },
                           },
                         }}
                       >
