@@ -8,42 +8,10 @@ import {
   CardContent,
   Divider,
 } from "@mui/material";
-import javaIcon from "../assets/images/java-icon.png";
-import webdevIcon from "../assets/images/webdev-icon.png";
-import databaseIcon from "../assets/images/database-icon.png";
-import pythonIcon from "../assets/images/python-icon.png";
-import otherSkillsIcon from "../assets/images/other-skills-icon.png";
 import React from "react";
-import Constants from "../Constants";
+import { urlFor } from "../client";
 
-function Skills() {
-  const data = [
-    {
-      image: javaIcon,
-      header: "Backend Entwicklung",
-      text: Constants.LOREM_IPSUM,
-    },
-    {
-      image: pythonIcon,
-      header: "Data Science",
-      text: Constants.LOREM_IPSUM,
-    },
-    {
-      image: webdevIcon,
-      header: "Web Entwicklung",
-      text: Constants.LOREM_IPSUM,
-    },
-    {
-      image: databaseIcon,
-      header: "Datenbanken",
-      text: Constants.LOREM_IPSUM,
-    },
-    {
-      image: otherSkillsIcon,
-      header: "Weitere",
-      text: Constants.LOREM_IPSUM,
-    },
-  ];
+function Skills({ skills }) {
   return (
     <Paper
       id="skills"
@@ -75,69 +43,73 @@ function Skills() {
             alignItems: "center",
           }}
         >
-          {data.map((element, i) => (
-            <Grid
-              item
-              xs={12}
-              md={6}
-              lg={4}
-              key={i}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Card
-                elevation={4}
+          {skills ? (
+            skills.map((element, i) => (
+              <Grid
+                item
+                xs={12}
+                md={6}
+                lg={4}
+                key={i}
                 sx={{
-                  borderRadius: "45px",
-                  maxWidth: { md: 400, lg: 520 },
-                  m: 2,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
-                <CardMedia
-                  component="img"
-                  alt="skills"
+                <Card
+                  elevation={4}
                   sx={{
-                    width: 126,
-                    maxWidth: { xs: 64, md: 84, lg: 126 },
-                    height: "auto",
-                    objectFit: "contain",
-                    display: "block",
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    marginTop: 4,
-                    marginBottom: 4,
+                    borderRadius: "45px",
+                    maxWidth: { md: 400, lg: 520 },
+                    m: 2,
                   }}
-                  image={element.image}
-                />
-                <Divider
-                  variant="middle"
-                  sx={{
-                    borderBottomWidth: "unset",
-                  }}
-                />
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h4"
-                    component="div"
-                    textAlign={"center"}
-                  >
-                    {element.header}
-                  </Typography>
-                  <Typography
+                >
+                  <CardMedia
+                    component="img"
+                    alt="skills"
                     sx={{
-                      fontSize: { xs: "0.8rem", md: "1rem", lg: "1rem" },
+                      width: 126,
+                      maxWidth: { xs: 64, md: 84, lg: 126 },
+                      height: "auto",
+                      objectFit: "contain",
+                      display: "block",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      marginTop: 4,
+                      marginBottom: 4,
                     }}
-                  >
-                    {element.text}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+                    image={element ? urlFor(element.imageurl).toString() : ""}
+                  />
+                  <Divider
+                    variant="middle"
+                    sx={{
+                      borderBottomWidth: "unset",
+                    }}
+                  />
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h4"
+                      component="div"
+                      textAlign={"center"}
+                    >
+                      {element.title}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: { xs: "0.8rem", md: "1rem", lg: "1rem" },
+                      }}
+                    >
+                      {element.text}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))
+          ) : (
+            <Box></Box>
+          )}
         </Grid>
       </Box>
     </Paper>

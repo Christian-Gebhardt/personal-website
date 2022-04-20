@@ -2,37 +2,43 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Box } from "@mui/material";
 
-const EmbeddedVideo = ({ embedId }) => (
-  <div
-    className="video-responsive"
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      overflow: "hidden",
-      paddingBottom: "56.25%",
-      marginBottom: -14,
-      position: "relative",
-      height: 0,
+const EmbeddedVideo = ({ url }) => (
+  <Box
+    sx={{
+      mx: 4,
     }}
   >
-    <iframe
+    <div
+      className="video-responsive"
       style={{
-        margin: "auto",
-        height: "95%",
-        width: "95%",
-        position: "absolute",
+        overflow: "hidden",
+        paddingBottom: "56.25%",
+        position: "relative",
+        height: 0,
       }}
-      src={`https://www.youtube.com/embed/${embedId}`}
-      frameBorder="0"
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="Embedded youtube"
-    />
-  </div>
+    >
+      <iframe
+        width={853}
+        height={480}
+        src={url}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        title="Embedded youtube"
+        style={{
+          left: "5%",
+          top: "5%",
+          height: "90%",
+          width: "90%",
+          position: "absolute",
+        }}
+      />
+    </div>
+  </Box>
 );
 
 EmbeddedVideo.propTypes = {
-  embedId: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };
 
 export default EmbeddedVideo;

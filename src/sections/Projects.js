@@ -10,62 +10,10 @@ import {
 import { GitHub } from "@mui/icons-material";
 import Constants from "../Constants";
 import EmbeddedVideo from "../components/EmbeddedVideo";
+import ImageSlideshow from "../components/ImageSlideshow";
 
-function Projects() {
-  const data = [
-    {
-      title: "ERP-System",
-      description: Constants.LOREM_IPSUM,
-      technologies: [
-        "Java",
-        "Spring",
-        "JavaScript",
-        "HTML & CSS",
-        "React",
-        "Bootstrap",
-        "MySQL",
-      ],
-      link: "https://github.com/stars/Christian-Gebhardt/lists/klassifikatoren-evaluation",
-      media: "eqmKMensZ5U",
-    },
-    {
-      title: "Evaluationsframework Machine Learning",
-      description: Constants.LOREM_IPSUM,
-      technologies: [
-        "Python",
-        "Flask",
-        "JavaScript",
-        "HTML & CSS",
-        "React",
-        "MaterialUI",
-        "Scikit-Learn",
-        "Scipy",
-      ],
-      link: "https://github.com/stars/Christian-Gebhardt/lists/klassifikatoren-evaluation",
-      media: "eqmKMensZ5U",
-    },
-    {
-      title: "System für Literaturverwaltung",
-      description: Constants.LOREM_IPSUM,
-      technologies: [
-        "Java",
-        "Spring",
-        "JavaScript",
-        "HTML & CSS",
-        "React",
-        "Bootstrap",
-        "MySQL",
-      ],
-      media: "eqmKMensZ5U",
-    },
-    {
-      title: "Naiver Trading Bot",
-      description: Constants.LOREM_IPSUM,
-      technologies: ["Python", "Binance API", "Slack Bot"],
-      link: "https://github.com/stars/Christian-Gebhardt/lists/klassifikatoren-evaluation",
-      media: "eqmKMensZ5U",
-    },
-  ];
+function Projects({ projects }) {
+  console.log(projects);
   return (
     <Paper
       id="projects"
@@ -102,112 +50,128 @@ function Projects() {
           },
         }}
       >
-        {data.map((element, i) => (
-          <Box className="project-box" key={i}>
-            <Grid
-              className="project"
-              container
-              sx={{
-                justifyContent: "center",
-                alignItems: "center",
-                verticalAlign: "bottom",
-              }}
-            >
-              <Grid item md={12} lg={6}>
-                {" "}
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <Typography
-                    variant="h2"
-                    sx={{
-                      textAlign: "center",
-                      m: 4,
-                      wordWrap: "break-word",
-                    }}
-                  >
-                    {element.title}
-                  </Typography>
-                  <Divider variant="middle" />
-                  <Typography
-                    sx={{
-                      m: 4,
-                    }}
-                  >
-                    {element.description}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      mt: 2,
-                      mb: 4,
-                      mx: 4,
-                      fontSize: { sx: "1rem", lg: "1.25rem" },
-                      fontWeight: "medium",
-                    }}
-                  >
-                    {"Verwendete Technologien: " +
-                      element.technologies.join(", ")}
-                  </Typography>
-                </Box>
-              </Grid>
-              <Grid item lg={6} md={8} justifyContent="center">
-                <Box
-                  sx={{
-                    my: 2,
-                    mx: 4,
-                  }}
-                >
-                  <EmbeddedVideo embedId={element.media} />
+        {projects ? (
+          projects.map((element, i) => (
+            <Box className="project-box" key={i}>
+              <Grid
+                className="project"
+                container
+                sx={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                  verticalAlign: "bottom",
+                }}
+              >
+                <Grid item md={12} lg={6}>
+                  {" "}
                   <Box
                     sx={{
                       display: "flex",
-                      flexDirection: "row",
-                      justifyContent: "center",
-                      alignItems: "center",
+                      flexDirection: "column",
                     }}
                   >
                     <Typography
-                      variant="h5"
+                      variant="h2"
                       sx={{
-                        fontSize: { sx: "1.1rem", lg: "1.35rem" },
                         textAlign: "center",
+                        m: 4,
+                        wordWrap: "break-word",
                       }}
                     >
-                      Link zu Git Repository:
+                      {element.title}
                     </Typography>
-                    <a
-                      target="_blank"
-                      href={element.link}
-                      rel="noopener noreferrer"
-                      style={{
-                        textDecoration: "none",
-                        color: "inherit",
+                    <Divider variant="middle" />
+                    <Typography
+                      sx={{
+                        m: 4,
                       }}
                     >
-                      <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="github"
+                      {element.text}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        mx: 4,
+                        fontSize: { sx: "1rem", lg: "1.25rem" },
+                        fontWeight: "medium",
+                      }}
+                    >
+                      {"Verwendete Technologien: " +
+                        element.technologies.join(", ")}
+                    </Typography>
+                  </Box>
+                </Grid>
+                <Grid
+                  item
+                  lg={6}
+                  md={12}
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "90%",
+                    gap: 2,
+                    my: 4,
+                  }}
+                >
+                  {element.videourl ? (
+                    <EmbeddedVideo url={element.videourl} />
+                  ) : element.imageurls ? (
+                    <ImageSlideshow imageurls={element.imageurls} />
+                  ) : (
+                    <div></div>
+                  )}
+                  {element.githuburl ? (
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <Typography
+                        variant="h5"
                         sx={{
-                          mx: 1.5,
-                          "& svg": {
-                            fontSize: { sx: "1.5rem", lg: "2.25rem" },
-                          },
+                          fontSize: { sx: "1.1rem", lg: "1.35rem" },
+                          textAlign: "center",
                         }}
                       >
-                        <GitHub />
-                      </IconButton>
-                    </a>
-                  </Box>
-                </Box>
+                        Link zu Git Repository:
+                      </Typography>
+                      <a
+                        target="_blank"
+                        href={element.githuburl}
+                        rel="noopener noreferrer"
+                        style={{
+                          textDecoration: "none",
+                          color: "inherit",
+                        }}
+                      >
+                        <IconButton
+                          size="large"
+                          edge="start"
+                          color="inherit"
+                          aria-label="github"
+                          sx={{
+                            mx: 1.5,
+                            "& svg": {
+                              fontSize: { sx: "1.5rem", lg: "2.25rem" },
+                            },
+                          }}
+                        >
+                          <GitHub />
+                        </IconButton>
+                      </a>
+                    </Box>
+                  ) : (
+                    <Box></Box>
+                  )}
+                </Grid>
               </Grid>
-            </Grid>
-          </Box>
-        ))}
+            </Box>
+          ))
+        ) : (
+          <div></div>
+        )}
       </Box>
     </Paper>
   );

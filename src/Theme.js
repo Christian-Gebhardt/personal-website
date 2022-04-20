@@ -53,13 +53,10 @@ const components = {
 function setFontSize(factor) {
   const width = window.innerWidth;
   if (width >= breakpoints.values["xl"]) {
-    console.log("PC");
     return 20 * factor;
   } else if (width >= breakpoints.values["md"]) {
-    console.log("Tablet");
     return 16 * factor;
   } else {
-    console.log("Mobile");
     return 12 * factor;
   }
 }
@@ -68,13 +65,10 @@ function setFontSize(factor) {
 function setSpacing(factor) {
   const width = window.innerWidth;
   if (width >= breakpoints.values["xl"]) {
-    console.log("PC");
     return 8 * factor;
   } else if (width >= breakpoints.values["md"]) {
-    console.log("Tablet");
     return 6 * factor;
   } else {
-    console.log("Mobile");
     return 2 * factor;
   }
 }

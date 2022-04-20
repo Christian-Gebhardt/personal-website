@@ -35,9 +35,9 @@ function NavigationMenuButton() {
         }}
         sx={{
           "& li": {
-            fontSize: "1.5rem",
-            padding: 1.5,
-            mx: 4,
+            fontSize: { sx: "1rem", md: "1.25rem", lg: "1.5rem" },
+            mx: 2.5,
+            my: 1,
           },
         }}
       >

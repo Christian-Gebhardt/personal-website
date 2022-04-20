@@ -10,10 +10,8 @@ import {
   TimelineSeparator,
   TimelineOppositeContent,
 } from "@mui/lab";
-import Constants from "../Constants";
-import { theme } from "../Theme";
 
-function Vita() {
+function Vita({ vita }) {
   return (
     <Paper
       id="vita"
@@ -47,10 +45,7 @@ function Vita() {
           sx={{
             alignContent: "flex-start",
             "& p": {
-              fontSize: { xs: "0.8rem", md: "1rem", lg: "1.25rem" },
-            },
-            "& h3": {
-              fontSize: { xs: "0.8rem", md: "1rem", lg: "1.25rem" },
+              fontSize: { xs: "0.75rem", md: "1rem", lg: "1.25rem" },
             },
             "& h5": {
               fontSize: { xs: "0.8rem", md: "1rem", lg: "1.25rem" },
@@ -68,136 +63,45 @@ function Vita() {
             },
           }}
         >
-          <TimelineItem className="timeline-item">
-            <TimelineOppositeContent
-              className="timeline-opposite-content"
-              sx={{ m: "auto 0" }}
-              align="right"
-              color="text.secondary"
-            >
-              <Typography>2021-2023</Typography>
-            </TimelineOppositeContent>
-            <TimelineSeparator className="timeline-seperator">
-              <TimelineConnector className="timeline-connector" />
-              <TimelineDot color="primary">
-                <School />
-              </TimelineDot>
-              <TimelineConnector className="timeline-connector" />
-            </TimelineSeparator>
-            <TimelineContent className="timeline-content-right">
-              <Box sx={{ ml: 4, mr: 2 }}>
-                <Typography variant="h3" component="span">
-                  Universität Bayreuth
-                </Typography>
-                <Typography variant="h5">Master of Science</Typography>
-                <Typography
-                  sx={{
-                    textAlign: "left",
-                    my: 1,
-                  }}
+          {vita ? (
+            vita.map((item, i) => (
+              <TimelineItem className="timeline-item" key={i}>
+                <TimelineOppositeContent
+                  className="timeline-opposite-content"
+                  sx={{ m: "auto 0" }}
+                  align="right"
+                  color="text.secondary"
                 >
-                  {Constants.LOREM_IPSUM_SMALL}
-                </Typography>
-              </Box>
-            </TimelineContent>
-          </TimelineItem>
-          <TimelineItem className="timeline-item">
-            <TimelineOppositeContent
-              className="timeline-opposite-content"
-              sx={{ m: "auto 0" }}
-              color="text.secondary"
-            >
-              <Typography>2021-2022</Typography>
-            </TimelineOppositeContent>
-            <TimelineSeparator className="timeline-seperator">
-              <TimelineConnector className="timeline-connector" />
-              <TimelineDot color="secondary">
-                <Laptop />
-              </TimelineDot>
-              <TimelineConnector className="timeline-connector" />
-            </TimelineSeparator>
-            <TimelineContent className="timeline-content-left">
-              <Box sx={{ ml: 4, mr: 2 }}>
-                <Typography variant="h3" component="span">
-                  Werkstudent
-                </Typography>
-                <Typography variant="h5">Softwareentwicklung</Typography>
-                <Typography
-                  sx={{
-                    textAlign: "left",
-                    my: 1,
-                  }}
-                >
-                  {Constants.LOREM_IPSUM_SMALL}
-                </Typography>
-              </Box>
-            </TimelineContent>
-          </TimelineItem>
-          <TimelineItem className="timeline-item">
-            <TimelineOppositeContent
-              className="timeline-opposite-content"
-              sx={{ m: "auto 0" }}
-              color="text.secondary"
-            >
-              <Typography>2017-2021</Typography>
-            </TimelineOppositeContent>
-            <TimelineSeparator className="timeline-seperator">
-              <TimelineConnector className="timeline-connector" />
-              <TimelineDot color="primary">
-                <School />
-              </TimelineDot>
-              <TimelineConnector className="timeline-connector" />
-            </TimelineSeparator>
-
-            <TimelineContent className="timeline-content-right">
-              <Box sx={{ ml: 4, mr: 2 }}>
-                <Typography variant="h3" component="span">
-                  Universität Bayreuth
-                </Typography>
-                <Typography variant="h5">Bachelor of Science</Typography>
-                <Typography
-                  sx={{
-                    textAlign: "left",
-                    my: 1,
-                  }}
-                >
-                  {Constants.LOREM_IPSUM_SMALL}
-                </Typography>
-              </Box>
-            </TimelineContent>
-          </TimelineItem>
-          <TimelineItem className="timeline-item">
-            <TimelineOppositeContent
-              className="timeline-opposite-content"
-              sx={{ m: "auto 0" }}
-              color="text.secondary"
-            >
-              <Typography>2009-2017</Typography>
-            </TimelineOppositeContent>
-            <TimelineSeparator className="timeline-seperator">
-              <TimelineConnector className="timeline-connector" />
-              <TimelineDot color="secondary">
-                <School />
-              </TimelineDot>
-              <TimelineConnector className="timeline-connector" />
-            </TimelineSeparator>
-            <TimelineContent className="timeline-content-left">
-              <Box sx={{ ml: 4, mr: 2 }}>
-                <Typography variant="h3" component="span">
-                  Gymnasium Münchberg
-                </Typography>
-                <Typography variant="h5">Abitur</Typography>
-                <Typography
-                  sx={{
-                    textAlign: "left",
-                    my: 1,
-                  }}
-                >
-                  {Constants.LOREM_IPSUM_SMALL}
-                </Typography>
-              </Box>
-            </TimelineContent>
-          </TimelineItem>
+                  <Typography>{item.time}</Typography>
+                </TimelineOppositeContent>
+                <TimelineSeparator className="timeline-seperator">
+                  <TimelineConnector className="timeline-connector" />
+                  <TimelineDot color={i % 2 === 0 ? "primary" : "secondary"}>
+                    {item.IconType === "school" ? <School /> : <Laptop />}
+                  </TimelineDot>
+                  <TimelineConnector className="timeline-connector" />
+                </TimelineSeparator>
+                <TimelineContent className="timeline-content-right">
+                  <Box sx={{ ml: 4, mr: 2 }}>
+                    <Typography variant="h3" component="span">
+                      {item.name}
+                    </Typography>
+                    <Typography variant="h5">{item.subtitle}</Typography>
+                    <Typography
+                      sx={{
+                        textAlign: "left",
+                        my: 1,
+                      }}
+                    >
+                      {item.text}
+                    </Typography>
+                  </Box>
+                </TimelineContent>
+              </TimelineItem>
+            ))
+          ) : (
+            <Box></Box>
+          )}
         </Timeline>
       </Box>
     </Paper>

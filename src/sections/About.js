@@ -1,9 +1,8 @@
 import React from "react";
 import { Paper, Avatar, Typography, Box } from "@mui/material";
-import Constants from "../Constants";
-import profilePicture from "../assets/images/profile.png";
+import { urlFor } from "../client";
 
-function About() {
+function About({ about }) {
   return (
     <Paper id="about" elevation={6} sx={{ mx: 4, my: 6, p: 2 }}>
       <Typography
@@ -34,7 +33,7 @@ function About() {
         >
           <Avatar
             alt="Profilbild"
-            src={profilePicture}
+            src={about ? urlFor(about.imageurl).toString() : ""}
             sx={{
               width: 700,
               height: 700,
@@ -58,7 +57,7 @@ function About() {
                 textAlign: "justify",
               }}
             >
-              {Constants.LOREM_IPSUM + Constants.LOREM_IPSUM}
+              {about ? about.text : ""}
             </Typography>
           </Box>
         </Box>

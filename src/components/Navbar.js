@@ -9,12 +9,12 @@ import NavigationMenuButton from "./NavigationMenuButton";
 
 const copyText = require("clipboard-copy");
 
-function Navbar() {
+function Navbar({ profile }) {
   const [open, setOpen] = useState(false);
 
   const handleCopyClick = () => {
     setOpen(true);
-    copyText(Constants.EMAIL);
+    copyText(profile.email);
   };
 
   return (
@@ -84,7 +84,7 @@ function Navbar() {
             />
             <a
               target="_blank"
-              href="https://github.com/Christian-Gebhardt"
+              href={profile ? profile.githuburl : ""}
               rel="noopener noreferrer"
               style={{
                 textDecoration: "none",
@@ -108,7 +108,7 @@ function Navbar() {
             </a>
             <a
               target="_blank"
-              href="https://www.linkedin.com/in/christian-gebhardt-a94081224/"
+              href={profile ? profile.linkedinurl : ""}
               rel="noopener noreferrer"
               style={{
                 textDecoration: "none",
