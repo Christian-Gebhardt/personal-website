@@ -22,9 +22,10 @@ export default {
       type: "string",
     },
     {
-      name: "text",
-      title: "Text",
-      type: "string",
+      name: "keywords",
+      title: "Keywords",
+      type: "array",
+      of: [{ type: "string" }],
     },
     {
       name: "priority",

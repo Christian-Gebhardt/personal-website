@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import { BottomNavigation, Typography, IconButton, Box } from "@mui/material";
 import LightTooltip from "./LightTooltip";
 import CustomSnackbar from "./CustomSnackbar";
-import Constants from "../Constants";
 import { GitHub, LinkedIn, Email } from "@mui/icons-material";
 
 const copyText = require("clipboard-copy");
 
-function Footer() {
+function Footer({ profile }) {
   const [open, setOpen] = useState(false);
 
   const handleCopyClick = () => {
     setOpen(true);
-    copyText(Constants.EMAIL);
+    copyText(profile.email);
   };
 
   return (
@@ -33,7 +32,7 @@ function Footer() {
         <Typography>© 2022 Christian Gebhardt</Typography>
       </Box>
       <Box>
-        <Typography>{"Kontakt: " + Constants.EMAIL}</Typography>
+        <Typography>{profile ? "Kontakt: " + profile.email : ""}</Typography>
       </Box>
       <Box
         sx={{
@@ -46,7 +45,9 @@ function Footer() {
         <LightTooltip
           title={
             <React.Fragment>
-              <Typography color="inherit">{Constants.EMAIL}</Typography>
+              <Typography color="inherit">
+                {profile ? profile.email : ""}
+              </Typography>
             </React.Fragment>
           }
         >
@@ -70,11 +71,11 @@ function Footer() {
           open={open}
           setOpen={setOpen}
           message="Email wurde in Zwischenablage kopiert."
-          pos={{ vertical: "top", horizontal: "center" }}
+          pos={{ vertical: "bottom", horizontal: "center" }}
         />
         <a
           target="_blank"
-          href="https://github.com/Christian-Gebhardt"
+          href={profile ? profile.githuburl : ""}
           rel="noopener noreferrer"
           style={{
             textDecoration: "none",
@@ -98,7 +99,7 @@ function Footer() {
         </a>
         <a
           target="_blank"
-          href="https://www.linkedin.com/in/christian-gebhardt-a94081224/"
+          href={profile ? profile.linkedinurl : ""}
           rel="noopener noreferrer"
           style={{
             textDecoration: "none",

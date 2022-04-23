@@ -34,6 +34,14 @@ function CustomSnackbar({ open, setOpen, message, pos }) {
       message={message}
       key={vertical + horizontal}
       action={action}
+      sx={{
+        maxWidth: "50%",
+        left: "25%",
+        right: "auto",
+        "& .MuiSnackbarContent-message": {
+          fontSize: { xs: "0.45rem", md: "0.75rem", lg: "1rem" },
+        },
+      }}
     ></Snackbar>
   );
 }

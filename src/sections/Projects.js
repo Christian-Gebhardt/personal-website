@@ -8,12 +8,13 @@ import {
   IconButton,
 } from "@mui/material";
 import { GitHub } from "@mui/icons-material";
-import Constants from "../Constants";
 import EmbeddedVideo from "../components/EmbeddedVideo";
 import ImageSlideshow from "../components/ImageSlideshow";
+import { useTheme } from "@emotion/react";
 
 function Projects({ projects }) {
-  console.log(projects);
+  const theme = useTheme();
+
   return (
     <Paper
       id="projects"
@@ -167,6 +168,19 @@ function Projects({ projects }) {
                   )}
                 </Grid>
               </Grid>
+              {i < projects.length - 1 ? (
+                <Divider
+                  variant="middle"
+                  sx={{
+                    mt: 4,
+                    borderColor: theme.palette.primary.main,
+                    backgroundColor: theme.palette.primary.main,
+                    borderWidth: { sx: 0.35, md: 0.65, lg: 0.8 },
+                  }}
+                />
+              ) : (
+                <div></div>
+              )}
             </Box>
           ))
         ) : (

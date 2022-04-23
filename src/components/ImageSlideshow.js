@@ -29,6 +29,7 @@ function ImageSlideshow({ imageurls }) {
         },
         "& .slick-dots": {
           mt: 0,
+          mb: 2,
         },
         "& .slick-dots li button:before": {
           fontSize: "0.65rem",

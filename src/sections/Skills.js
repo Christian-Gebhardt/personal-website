@@ -7,6 +7,8 @@ import {
   CardMedia,
   CardContent,
   Divider,
+  List,
+  ListItem,
 } from "@mui/material";
 import React from "react";
 import { urlFor } from "../client";
@@ -61,7 +63,10 @@ function Skills({ skills }) {
                   elevation={4}
                   sx={{
                     borderRadius: "45px",
-                    maxWidth: { md: 400, lg: 520 },
+                    minWidth: { xs: 240, md: 320, lg: 400 },
+                    maxWidth: { xs: 280, md: 400, lg: 500 },
+                    minHeight: { xs: 480, md: 700, lg: 860 },
+                    maxHeight: { xs: 560, md: 800, lg: 1000 },
                     m: 2,
                   }}
                 >
@@ -70,7 +75,7 @@ function Skills({ skills }) {
                     alt="skills"
                     sx={{
                       width: 126,
-                      maxWidth: { xs: 64, md: 84, lg: 126 },
+                      maxWidth: { xs: 64, md: 84, lg: 326 },
                       height: "auto",
                       objectFit: "contain",
                       display: "block",
@@ -96,13 +101,34 @@ function Skills({ skills }) {
                     >
                       {element.title}
                     </Typography>
-                    <Typography
+                    <Box
                       sx={{
-                        fontSize: { xs: "0.8rem", md: "1rem", lg: "1rem" },
+                        ml: 3,
                       }}
                     >
-                      {element.text}
-                    </Typography>
+                      <List
+                        sx={{
+                          listStyleType: "disc",
+                          "& p": {
+                            fontSize: {
+                              xs: "0.8rem",
+                              md: "0.95rem",
+                              lg: "1.2rem",
+                            },
+                          },
+                        }}
+                      >
+                        {element.keywords ? (
+                          element.keywords.map((keyword, i) => (
+                            <ListItem key={i} sx={{ display: "list-item" }}>
+                              <Typography>{keyword}</Typography>
+                            </ListItem>
+                          ))
+                        ) : (
+                          <div></div>
+                        )}
+                      </List>
+                    </Box>
                   </CardContent>
                 </Card>
               </Grid>

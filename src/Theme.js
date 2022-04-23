@@ -53,11 +53,11 @@ const components = {
 function setFontSize(factor) {
   const width = window.innerWidth;
   if (width >= breakpoints.values["xl"]) {
-    return 20 * factor;
+    return 22 * factor;
   } else if (width >= breakpoints.values["md"]) {
     return 16 * factor;
   } else {
-    return 12 * factor;
+    return 8 * factor;
   }
 }
 

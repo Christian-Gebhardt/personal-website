@@ -17,6 +17,7 @@ function App() {
   const [projects, setProjects] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
+  // fetch data from sanity
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -74,7 +75,9 @@ function App() {
           sx={{
             position: "absolute",
             top: "50%",
-            right: "50%",
+            left: "50%",
+            marginRight: "-50%",
+            transform: "translate(-50%, -50%)",
           }}
         />
       )}

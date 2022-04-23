@@ -4,7 +4,6 @@ import { GitHub, LinkedIn, Email } from "@mui/icons-material";
 import LightTooltip from "./LightTooltip";
 import logo from "../assets/images/logo-white.png";
 import CustomSnackbar from "./CustomSnackbar";
-import Constants from "../Constants";
 import NavigationMenuButton from "./NavigationMenuButton";
 
 const copyText = require("clipboard-copy");
@@ -55,7 +54,9 @@ function Navbar({ profile }) {
             <LightTooltip
               title={
                 <React.Fragment>
-                  <Typography color="inherit">{Constants.EMAIL}</Typography>
+                  <Typography color="inherit">
+                    {profile ? profile.email : ""}
+                  </Typography>
                 </React.Fragment>
               }
               placement="bottom"
