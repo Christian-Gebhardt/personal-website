@@ -77,6 +77,7 @@ function Projects({ projects }) {
                         textAlign: "center",
                         m: 4,
                         wordWrap: "break-word",
+                        hyphens: "auto",
                       }}
                     >
                       {element.title}

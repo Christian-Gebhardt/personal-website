@@ -29,7 +29,7 @@ function Footer({ profile }) {
       }}
     >
       <Box>
-        <Typography>© 2022 Christian Gebhardt</Typography>
+        <Typography>© 2023 Christian Gebhardt</Typography>
       </Box>
       <Box>
         <Typography>{profile ? "Kontakt: " + profile.email : ""}</Typography>

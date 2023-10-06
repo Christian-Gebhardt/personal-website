@@ -50,8 +50,8 @@ function Skills({ skills }) {
               <Grid
                 item
                 xs={12}
-                md={6}
-                lg={4}
+                lg={6}
+                xl={4}
                 key={i}
                 sx={{
                   display: "flex",
@@ -65,8 +65,8 @@ function Skills({ skills }) {
                     borderRadius: "45px",
                     minWidth: { xs: 240, md: 320, lg: 400 },
                     maxWidth: { xs: 280, md: 400, lg: 500 },
-                    minHeight: { xs: 480, md: 700, lg: 860 },
-                    maxHeight: { xs: 560, md: 800, lg: 1000 },
+                    minHeight: { xs: 560, md: 800, lg: 920 },
+                    maxHeight: { xs: 560, md: 800, lg: 920 },
                     m: 2,
                   }}
                 >

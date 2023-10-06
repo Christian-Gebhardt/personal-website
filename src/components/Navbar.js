@@ -70,7 +70,7 @@ function Navbar({ profile }) {
                 sx={{
                   mx: 1.5,
                   "& svg": {
-                    fontSize: { xs: "1.2rem", lg: "2.35rem" },
+                    fontSize: { xs: "1.6rem", lg: "2.1rem" },
                   },
                 }}
               >
@@ -100,7 +100,7 @@ function Navbar({ profile }) {
                 sx={{
                   mx: 1.5,
                   "& svg": {
-                    fontSize: { xs: "1.2rem", lg: "2.35rem" },
+                    fontSize: { xs: "1.8rem", lg: "2.1rem" },
                   },
                 }}
               >
@@ -124,7 +124,7 @@ function Navbar({ profile }) {
                 sx={{
                   mx: 1.5,
                   "& svg": {
-                    fontSize: { xs: "1.2rem", lg: "2.35rem" },
+                    fontSize: { xs: "1.8rem", lg: "2.1rem" },
                   },
                 }}
               >
@@ -136,7 +136,7 @@ function Navbar({ profile }) {
                 mr: 1.5,
                 ml: 6,
                 "& svg": {
-                  fontSize: { xs: "2.25rem", lg: "3.5rem" },
+                  fontSize: { xs: "2.2rem", lg: "3rem" },
                 },
               }}
             >
